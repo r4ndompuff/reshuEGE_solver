@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<!--Начало первого блока объяснения кода-->
+<head>
+  <meta charset="utf-8">
+  <title>ReshuEge/Oge Solver</title>
+  <script src="jquery-3.5.0.min.js" type="text/javascript"></script>
+  <!--ссылаемся на шрифты, используемые в документе-->
+  <link href="https://fonts.googleapis.com/css?family=Times+New+Roman" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!--здесь мы ссылаемся на стили, которые будем использовать в документе, а именно стиль иконок-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+    <!--начало блока со стилями для страницы-->
+  <style>
+    /* Модальная структура документа */
+    /*общие настройки для всего документа*/
+    html,
+    body {
+      font-family: 'Times New Roman', sans-serif;
+      font-size: 14px;
+      margin: 0;
+      min-height: 180px;
+      padding: 0;
+    }
+    /*задаём настройки для заголовков первого уровня*/
+    h1 {
+      font-family: 'Menlo', monospace;
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0;
+      color: #2f5876;
+    }
+    a:link,
+    a:visited {
+      color: #000000;
+      outline: 0;
+      text-decoration: none;
+    }
+    /*задаём ширину картинки*/
+    img {
+      width: 30px; /*ширина изображений*/
+    }
+    .modal-header {
+      align-items: center; /*выравнивание элементов по центру*/
+      border-bottom: 0.5px solid #dadada; /*свойства нижней разделительной линии*/
+      height: 50px;
+    }
+    .modal-content {
+      padding: 0 22px; /*отступы сверху и снизу, сверху и слева*/
+    }
+    .modal-icons {
+      border-top: 0.5px solid #dadada; /*свойства верхней разделительной линии*/
+      height: 50px;
+      width: 100%;
+    }
+    .logo {
+      padding: 16px; /*отступы со всех сторон*/
+    }
+    .logo-icon {
+      vertical-align: text-bottom; /*выравнивание по нижней части текста*/
+      margin-right: 12px; /*задётся отступ элементов от изображения*/
+    }
+    .version {
+      color: #444;
+      font-size: 18px;
+    }
+    .flex-container {
+      display: flex; /*отображает контейнер в виде блочного элемента*/
+      justify-content: space-between; /*равномерное выравнивание элементов*/
+      padding: 10px 22px;
+    }
+    /*задаём настройки для контейнеров с иконками*/
+    .flex {
+      opacity: 1; /*параметр непрозрачности иконок*/
+      width: 120px;
+    }
+    .flex:hover {
+      opacity: 0.4; /*уровень непрозрачности при наведении курсора на элемент*/
+    }
+    .flex .fa {
+      font-size: 40px;
+      color: #2f5876;
+    }
+    .wrapper {
+      border: 6px solid mediumturquoise;
+      background-color: silver;
+    }
+    .FAQ {
+      padding: 0 22px;
+      border: 6px solid gold;
+      background-color: grey;
+    }
+  </style>
+  <!--конец объяснения блока со стилями -->
+  <script src="popup.js"></script>
+</head>
+<!--объяснение тега <body>-->
+<body>
+  <!--контейнер, содержащий название, логотип и номер версии-->
+  <div class="modal-header">
+    <h1 class="logo">
+      <img class="logo-icon" src="images/icon.png"> ReshuEge Solver
+      <span class="version">(1.0.0)</span>
+    </h1>
+  </div>
+  <!--Конец контейнера-->
+  <!--контейнер, содержащий описание функций расширения-->
+  <div class="modal-content">
+    <p>Автоматическое решение вариантов и заданий портала Сдам ГИА: Решу ОГЭ/ЕГЭ </p>
+    <p> Создатели: Ловягин Андрей, Лачина Анастасия </p>
+    <div class="wrapper">
+      <h1> Инструкция: </h1>
+      <h3> 1) Открыть вариант по предмету, закрашеному в зелёный цветы. </h3>
+      <h3> 2) Нажать на кнопку расширения, чтобы открылось это окно. </h3>
+      <h3> 3) Пойти за чаем, пока расширение решает за вас вариант. </h3>
+      <h3> 4) Пролистать глазами вариант, чтобы не было пустых ячеек. (если есть, то писать нам: см. ниже) </h3>
+      <h3> 5) Сдать. </h3>
+    </div>
+    <p> ВНИМАНИЕ: работает только с тестовой частью, так как письменную проверяет преподаватель, а не система. Ниже написаны предметы с которыми на данный момент расширение работает. </p>
+  </div>
+  <h2> С какими предметами работает? </h2>
+  <table style="width:100%">
+    <tr>
+      <th text-align: center; colspan="7"> РешуЕГЭ </th>
+    </tr>
+    <tr>
+      <td bgcolor="green"><a href="https://math-ege.sdamgia.ru/" target="_blank">Математика </a></td>
+      <td bgcolor="green"><a href="https://inf-ege.sdamgia.ru/" target="_blank">Информатика</a></td>
+      <td bgcolor="green"><a href="https://rus-ege.sdamgia.ru/" target="_blank">Русский язык</a></td>
+      <td bgcolor="green"><a href="https://en-ege.sdamgia.ru/" target="_blank">Английский язык</a></td>
+      <td bgcolor="green"><a href="https://de-ege.sdamgia.ru/" target="_blank">Немецкий язык</a></td>
+      <td bgcolor="green"> <a href="https://fr-ege.sdamgia.ru/" target="_blank">Французский язык</a></td>
+      <td bgcolor="green"><a href="https://sp-ege.sdamgia.ru/" target="_blank">Испанский язык</a></td>
+    </tr>
+    <tr>
+      <td bgcolor="green"><a href="https://phys-ege.sdamgia.ru/" target="_blank">Физика</a></td>
+      <td bgcolor="green"><a href="https://chem-ege.sdamgia.ru/" target="_blank">Химия</a></td>
+      <td bgcolor="green"><a href="https://bio-ege.sdamgia.ru/" target="_blank">Биология</a></td>
+      <td bgcolor="red"><a href="https://geo-ege.sdamgia.ru/" target="_blank">География</a></td>
+      <td bgcolor="green"><a href="https://soc-ege.sdamgia.ru/" target="_blank">Обществознание</a></td>
+      <td bgcolor="green"><a href="https://lit-ege.sdamgia.ru/" target="_blank">Литература</a></td>
+      <td bgcolor="red"><a href="https://hist-ege.sdamgia.ru/" target="_blank">История</a></td>
+    </tr>
+  </table>
+  </br>
+  <table style="width:100%">
+    <tr>
+      <th text-align: center; colspan="7"> РешуОГЭ </th>
+    </tr>
+    <tr>
+      <td bgcolor="green"><a href="https://math-oge.sdamgia.ru/" target="_blank">Математика </a></td>
+      <td bgcolor="green"><a href="https://inf-oge.sdamgia.ru/" target="_blank">Информатика</a></td>
+      <td bgcolor="green"><a href="https://rus-oge.sdamgia.ru/" target="_blank">Русский язык</a></td>
+      <td bgcolor="red"><a href="https://en-oge.sdamgia.ru/" target="_blank">Английский язык</a></td>
+      <td bgcolor="red"><a href="https://de-oge.sdamgia.ru/" target="_blank">Немецкий язык</a></td>
+      <td bgcolor="green"><a href="https://fr-oge.sdamgia.ru/" target="_blank">Французский язык</a></td>
+      <td bgcolor="red"><a href="https://sp-oge.sdamgia.ru/" target="_blank">Испанский язык</a></td>
+    </tr>
+    <tr>
+      <td bgcolor="red"><a href="https://phys-oge.sdamgia.ru/" target="_blank">Физика</a></td>
+      <td bgcolor="green"><a href="https://chem-oge.sdamgia.ru/" target="_blank">Химия</a></td>
+      <td bgcolor="green"><a href="https://bio-oge.sdamgia.ru/" target="_blank">Биология</a></td>
+      <td bgcolor="green"><a href="https://geo-oge.sdamgia.ru/" target="_blank">География</a></td>
+      <td bgcolor="green"><a href="https://soc-oge.sdamgia.ru/" target="_blank">Обществознание</a></td>
+      <td bgcolor="grey"><a href="https://lit-oge.sdamgia.ru/" target="_blank">Литература</a></td>
+      <td bgcolor="red"><a href="https://hist-oge.sdamgia.ru/" target="_blank">История</a></td>
+    </tr>
+  </table>
+  <br>
+  <div class="FAQ">
+    <h1> FAQ: </h1>
+      <h3> 1) Вариант из зелёного цвета не решается, что делать? Ответ: обновите страницу, дождитесь полной загрузки страницы. </h3>
+      <h3> 2) Верхний ответ мне не помог, что делать? Ответ: проверьте, чтобы в ссылке имелось название предмета, например: https://inf-ege.sdamgia.ru/ перед тире стоит название предмета </h3>
+      <h3> 3) Тоже не помогает. Ответ: присылайте скрин/фото экрана в сообщения группы ВК (ссылка ниже).</h3>
+  </div>
+  <!--Конец контейнера-->
+  <!--контейнер, содержащий контейнеры с иконками-->
+  <div class="modal-icons">
+    <div class="flex-container">
+      <div class="flex">
+        <a href="https://vk.com/reshusolver" target="_blank">
+          <i class="fa fa-vk"></i>
+        </a>
+      </div>
+      Поддержите проект донатом в ВК, это мотивирует разработчиков.
+    </div>
+  </div>
+</body>
+
+</html>

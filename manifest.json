@@ -1,0 +1,24 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "images/icon.png",
+      "default_popup": "popup.html",
+      "default_title": "ReshuEge Solver"
+   },
+   "content_scripts": [ {
+      "js": [ "jquery-3.5.0.min.js", "content.js" ],
+      "matches": [ "https://*.sdamgia.ru/test*", "http://*.sdamgia.ru/test*" ]
+   } ],
+   "description": "Решения вариантов РешуЕгэ",
+   "icons": {
+      "128": "images/icon_128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5LDHPltSBsq+a97/9iFKY4K6uQ/zsaiU6brcbXt8TfWbtg5kbLeLXZUnbb2tw/9BYyNdRxtEcmD9BpiGX9k1eHS8dnefaLKe/4iPuGrMDRGMiCt/k+zqzAP71KQ8Aa9ta4UzwFO+M5ExFOvbadY8k4fLjLhjPqXJo4uFoTh6qbBqdA3FLUWEtzws2USM7UoMq2FqA0Y1MfuOuJS3YrH6/ksdDcgIBlXAXUYDBtQqP1UAX0RZqRmlrWkn1STgVmm7xwq+vwYlRn9uMfWd+2sXmGScvFe1JF1/k4Nng/DOwYjyPrHDuUP2k0PWReEaDX8TKlqezcz73EXNUy62J+TvmwIDAQAB",
+   "manifest_version": 2,
+   "name": "ReshuEge Solver",
+   "permissions": [ "activeTab" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.0"
+}
