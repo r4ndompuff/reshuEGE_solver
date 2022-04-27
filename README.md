@@ -1,2 +1,2 @@
 # ReshuEGE solver
-https://chrome.google.com/webstore/detail/reshuege-solver/njpakfdmibahfminckpeeiagmhlbbkec
+https://extpose.com/ext/191634
